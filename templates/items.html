@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Produtos{% endblock %}
+
+{% block content %}
+<h1>Nossos Produtos</h1>
+<div class="row">
+    {% for id, item in items.items() %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nome }}</h5>
+                <p class="card-text">Preço: R$ {{ item.preço }}</p>
+                <a href="/items/{{ id }}" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
